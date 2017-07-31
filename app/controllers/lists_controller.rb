@@ -12,7 +12,7 @@ class ListsController < ApplicationController
     @list = List.new(list_params)
     if @list.save
       flash[:notice] = "List successfully added!"
-      redirect_to  list_path(@list)
+      redirect_to  lists_path
     else
       render :new
     end
