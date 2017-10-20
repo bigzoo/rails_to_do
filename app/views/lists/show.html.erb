@@ -13,13 +13,14 @@
     <%= link_to "Delete", list_task_path(@list, task),
                                    :data => {:confirm => "Are you sure?",
                                                   :method => "delete"} %>
+    |Done:
+    <input type="checkbox" name=""<% if task.done==true %> <%='checked'%><% end%>>
   </li>
   <% end %>
 </ul>
 <% else %>
 <p>There are no tasks yet!</p>
 <% end %>
-
 <p><%= link_to "Add a task", new_list_task_path(@list) %></p>
 <p><%= link_to "Delete List", list_path(@list),
                           :data => {:confirm => "Are you sure?",
